@@ -1,7 +1,7 @@
 services:
   weaviate:
     container_name: ${CONTAINER_NAME}
-    image: semitechnologies/weaviate:1.28.16
+    image: semitechnologies/weaviate:1.26.1
     restart: always
     networks:
       - 1panel-network

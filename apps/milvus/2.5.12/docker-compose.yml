@@ -46,7 +46,7 @@ services:
 
   milvus:
     container_name: ${CONTAINER_NAME}
-    image: milvusdb/milvus:v2.5.8
+    image: milvusdb/milvus:v2.5.12
     restart: always
     networks:
       - 1panel-network
