@@ -6,7 +6,8 @@ app_local_dir="/opt/1panel/resource/apps/local"
 
 # AppStore的git仓库地址（必选）
 #git_repo_url="https://github.com/okxlin/appstore"
-git_repo_url="https://gitee.com/maywzh/1panel-appstore"
+git_repo_url="https://github.com/maywzh/1panel-appstore"
+
 
 # 访问git仓库的access token，访问私有仓库时用，优先级高于账密（可选）
 # 建议使用access token，降低账密泄露的风险
@@ -30,8 +31,8 @@ clean_remote_app_cache=false
 # 设置克隆或拉取远程仓库时使用的代理（可选）
 proxyUrl=""
 # 设置示例：
-# proxyUrl="http://127.0.0.1:7890"
-# proxyUrl="socks5://127.0.0.1:7890"
+# proxyUrl="http://192.168.2.1:7890"
+# proxyUrl="socks5://192.168.2.1:7891"
 # proxyUrl="socks5://user:password@host:port"
 
 # 将远程app store工程克隆到本地的工作目录
@@ -145,7 +146,7 @@ function proxy_off() {
 
 # 开启代理
 function proxy_on() {
-  proxy_url="http://127.0.0.1:7890"
+  proxy_url="http://192.168.2.1:7890"
   match_str="://"
 
   if [ -n "$1" ]; then
