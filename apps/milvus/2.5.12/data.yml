@@ -8,7 +8,7 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
-        - default: 9091
+        - default: 19091
           edit: true
           envKey: MILVUS_WEB_PORT
           labelEn: Milvus Web UI Port
