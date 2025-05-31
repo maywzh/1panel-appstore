@@ -1,3 +1,5 @@
+version: '3.5'
+
 services:
   etcd:
     container_name: ${CONTAINER_NAME}-etcd
@@ -21,7 +23,28 @@ services:
     labels:
       createdBy: "Apps"
 
-
+  minio:
+    container_name: ${CONTAINER_NAME}-minio
+    image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+    ports:
+      - "${MINIO_CONSOLE_PORT}:9001"
+      - "${MINIO_API_PORT}:9000"
+    volumes:
+      - ${DATA_PATH}/minio:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    labels:
+      createdBy: "Apps"
 
   milvus:
     container_name: ${CONTAINER_NAME}
@@ -35,9 +58,9 @@ services:
     environment:
       MINIO_REGION: us-east-1
       ETCD_ENDPOINTS: etcd:2379
-      MINIO_ADDRESS: ${EXTERNAL_MINIO_HOST}:${EXTERNAL_MINIO_PORT}
-      MINIO_ACCESS_KEY: ${EXTERNAL_MINIO_ACCESS_KEY}
-      MINIO_SECRET_KEY: ${EXTERNAL_MINIO_SECRET_KEY}
+      MINIO_ADDRESS: minio:9000
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
     volumes:
       - ${DATA_PATH}/milvus:/var/lib/milvus
     healthcheck:
@@ -51,6 +74,7 @@ services:
       - "${MILVUS_WEB_PORT}:9091"
     depends_on:
       - etcd
+      - minio
     labels:
       createdBy: "Apps"
 

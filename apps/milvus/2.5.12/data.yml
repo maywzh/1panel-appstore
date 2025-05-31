@@ -8,7 +8,7 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
-        - default: 19091
+        - default: 9091
           edit: true
           envKey: MILVUS_WEB_PORT
           labelEn: Milvus Web UI Port
@@ -16,33 +16,34 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
-        - default: localhost
+        - default: 9001
           edit: true
-          envKey: EXTERNAL_MINIO_HOST
-          labelEn: External MinIO Host
-          labelZh: 外部 MinIO 主机地址
+          envKey: MINIO_CONSOLE_PORT
+          labelEn: MinIO Console Port
+          labelZh: MinIO 控制台端口
           required: true
-          type: text
+          rule: paramPort
+          type: number
         - default: 9000
           edit: true
-          envKey: EXTERNAL_MINIO_PORT
-          labelEn: External MinIO Port
-          labelZh: 外部 MinIO 端口
+          envKey: MINIO_API_PORT
+          labelEn: MinIO API Port
+          labelZh: MinIO API 端口
           required: true
           rule: paramPort
           type: number
         - default: minioadmin
           edit: true
-          envKey: EXTERNAL_MINIO_ACCESS_KEY
-          labelEn: External MinIO Access Key
-          labelZh: 外部 MinIO 访问密钥
+          envKey: MINIO_ACCESS_KEY
+          labelEn: MinIO Access Key
+          labelZh: MinIO 访问密钥
           required: true
           type: text
         - default: minioadmin
           edit: true
-          envKey: EXTERNAL_MINIO_SECRET_KEY
-          labelEn: External MinIO Secret Key
-          labelZh: 外部 MinIO 密钥
+          envKey: MINIO_SECRET_KEY
+          labelEn: MinIO Secret Key
+          labelZh: MinIO 密钥
           required: true
           type: password
         - default: ./data/volumes
