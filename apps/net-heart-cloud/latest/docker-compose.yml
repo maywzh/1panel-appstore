@@ -1,0 +1,17 @@
+version: '3'
+services:
+  net-heart-cloud:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:18888"
+    volumes:
+      - ./data/storage:/storage
+    tmpfs:
+      - /run
+      - /tmp
+    image: onething1/wxedge:latest
+    privileged: true
+    labels:  
+      createdBy: "Apps"

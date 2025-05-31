@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ypay-v4:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:82"
+    image: zunfox/ypayipad_v4:latest	
+    labels:  
+      createdBy: "Apps"
+networks:  
+  1panel-network:  
+    external: true

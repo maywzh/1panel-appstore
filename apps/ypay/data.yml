@@ -1,0 +1,20 @@
+name: Ypay
+tags:
+    - 云端
+title: 一个支持源支付接入的云端
+type: 云端
+description: 一个支持源支付接入的云端
+additionalProperties:
+    key: ypay
+    name: Ypay
+    tags:
+        - Tool
+    shortDescZh: 一个支持源支付接入的云端
+    shortDescEn: An cloud that supports source payment access
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://www.yfx.top/
+    github: https://www.yfx.top/
+    document: https://www.yfx.top/

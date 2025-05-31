@@ -1,0 +1,20 @@
+name: Net-heart-cloud
+tags:
+    - 工具
+title: 网心云旗下的容器魔方
+type: 工具
+description: 网心云旗下的容器魔方
+additionalProperties:
+    key: net-heart-cloud
+    name: Net-heart-cloud
+    tags:
+        - Tool
+    shortDescZh: 网心云旗下的容器魔方
+    shortDescEn: SContainer Rubik's Cube under Net heart Cloud
+    type: tool
+    crossVersionUpdate: true
+    limit: 1
+    recommend: 0
+    website: https://help.onethingcloud.com/7cb4/2c7f
+    github: https://github.com/hslr-s/sun-panel
+    document: https://help.onethingcloud.com/7cb4/2c7f
