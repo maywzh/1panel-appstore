@@ -1,0 +1,41 @@
+additionalProperties:
+    formFields:
+        - default: 19530
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Milvus Port
+          labelZh: Milvus 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 9091
+          edit: true
+          envKey: MILVUS_WEB_PORT
+          labelEn: Milvus Web UI Port
+          labelZh: Milvus Web 管理端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 9000
+          edit: true
+          envKey: MINIO_API_PORT
+          labelEn: MinIO API Port
+          labelZh: MinIO API 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 9001
+          edit: true
+          envKey: MINIO_CONSOLE_PORT
+          labelEn: MinIO Console Port
+          labelZh: MinIO 控制台端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: ./data/volumes
+          edit: true
+          envKey: DATA_PATH
+          labelEn: Data folder path
+          labelZh: 数据文件夹路径
+          required: true
+          type: text

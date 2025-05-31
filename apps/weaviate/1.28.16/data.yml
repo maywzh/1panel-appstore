@@ -1,0 +1,36 @@
+additionalProperties:
+    formFields:
+        - default: 8080
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Weaviate Port
+          labelZh: Weaviate 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: ./data/weaviate
+          edit: true
+          envKey: DATA_PATH
+          labelEn: Data folder path
+          labelZh: 数据文件夹路径
+          required: true
+          type: text
+        - default: "false"
+          edit: true
+          envKey: AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED
+          labelEn: Anonymous Access
+          labelZh: 允许匿名访问
+          required: false
+          type: select
+          options:
+            - label: 启用
+              value: "true"
+            - label: 禁用
+              value: "false"
+        - default: ""
+          edit: true
+          envKey: QUERY_DEFAULTS_LIMIT
+          labelEn: Default Query Limit
+          labelZh: 默认查询限制
+          required: false
+          type: number

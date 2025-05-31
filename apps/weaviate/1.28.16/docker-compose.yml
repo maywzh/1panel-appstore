@@ -1,0 +1,24 @@
+services:
+  weaviate:
+    container_name: ${CONTAINER_NAME}
+    image: semitechnologies/weaviate:1.26.1
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${DATA_PATH}:/var/lib/weaviate"
+    environment:
+      - QUERY_DEFAULTS_LIMIT=${QUERY_DEFAULTS_LIMIT:-25}
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=${AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED:-true}
+      - PERSISTENCE_DATA_PATH=/var/lib/weaviate
+      - DEFAULT_VECTORIZER_MODULE=none
+      - ENABLE_MODULES=
+      - CLUSTER_HOSTNAME=node1
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

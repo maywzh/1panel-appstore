@@ -1,0 +1,22 @@
+name: Milvus
+tags:
+    - 数据库
+title: 高性能云原生向量数据库
+type: 数据库
+description: Milvus 是一个开源的向量数据库，专为 AI 应用和相似性搜索而构建，提供高性能的向量检索能力
+additionalProperties:
+    key: milvus
+    name: Milvus
+    tags:
+        - Database
+        - Vector Database
+        - AI
+    shortDescZh: 高性能云原生向量数据库
+    shortDescEn: High-performance cloud-native vector database
+    type: database
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://milvus.io/
+    github: https://github.com/milvus-io/milvus
+    document: https://milvus.io/docs/
