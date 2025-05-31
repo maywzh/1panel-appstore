@@ -16,22 +16,35 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
+        - default: localhost
+          edit: true
+          envKey: EXTERNAL_MINIO_HOST
+          labelEn: External MinIO Host
+          labelZh: 外部 MinIO 主机地址
+          required: true
+          type: text
         - default: 9000
           edit: true
-          envKey: MINIO_API_PORT
-          labelEn: MinIO API Port
-          labelZh: MinIO API 端口
+          envKey: EXTERNAL_MINIO_PORT
+          labelEn: External MinIO Port
+          labelZh: 外部 MinIO 端口
           required: true
           rule: paramPort
           type: number
-        - default: 9001
+        - default: minioadmin
           edit: true
-          envKey: MINIO_CONSOLE_PORT
-          labelEn: MinIO Console Port
-          labelZh: MinIO 控制台端口
+          envKey: EXTERNAL_MINIO_ACCESS_KEY
+          labelEn: External MinIO Access Key
+          labelZh: 外部 MinIO 访问密钥
           required: true
-          rule: paramPort
-          type: number
+          type: text
+        - default: minioadmin
+          edit: true
+          envKey: EXTERNAL_MINIO_SECRET_KEY
+          labelEn: External MinIO Secret Key
+          labelZh: 外部 MinIO 密钥
+          required: true
+          type: password
         - default: ./data/volumes
           edit: true
           envKey: DATA_PATH
