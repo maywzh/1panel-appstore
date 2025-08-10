@@ -1,6 +1,6 @@
 additionalProperties:
     formFields:
-        - default: 8080
+        - default: 8053
           edit: true
           envKey: PANEL_APP_PORT_HTTP
           labelEn: Weaviate Port
