@@ -2,7 +2,7 @@
 
 ## 简介
 
-Milvus 是一个开源的向量数据库，专为 AI 应用和相似性搜索而构建。它提供了高性能的向量检索能力，支持大规模向量数据的存储和查询。本部署包含完整的 Milvus 生态系统，包括 Milvus 数据库、etcd 协调服务和 MinIO 对象存储。
+Milvus 是一个开源的向量数据库，专为 AI 应用和相似性搜索而构建。它提供了高性能的向量检索能力，支持大规模向量数据的存储和查询。本部署包含完整的 Milvus 生态系统，包括 Milvus 数据库、etcd 协调服务。
 
 ## 服务架构
 
@@ -10,7 +10,6 @@ Milvus 是一个开源的向量数据库，专为 AI 应用和相似性搜索而
 
 - **Milvus**：主要的向量数据库服务
 - **etcd**：分布式键值存储，用于元数据管理
-- **MinIO**：对象存储服务，用于向量和索引数据存储
 
 ## 快速开始
 
@@ -20,16 +19,9 @@ Milvus 是一个开源的向量数据库，专为 AI 应用和相似性搜索而
 
 - **Milvus 服务**：`http://your-server-ip:19530` (默认端口)
 - **Milvus Web UI**：`http://your-server-ip:9091` (Web 管理界面)
-- **MinIO 控制台**：`http://your-server-ip:9001` (对象存储管理界面)
-- **MinIO API**：`http://your-server-ip:9000` (对象存储 API)
 
 ### 默认凭据
 
-- **MinIO 访问凭据**：
-  - 用户名：`minioadmin`
-  - 密码：`minioadmin`
-
-> **安全提示**：建议在生产环境中修改默认的 MinIO 访问凭据。
 
 ## 主要特性
 
@@ -183,12 +175,6 @@ curl http://your-server-ip:9091/api/v1/health
 curl http://your-server-ip:9091/api/v1/system/info
 ```
 
-### MinIO 监控
-
-通过 MinIO 控制台监控存储使用情况：
-- 访问：`http://your-server-ip:9001`
-- 监控存储使用量、请求统计等指标
-
 ### 数据备份策略
 
 建议定期备份以下数据目录：
@@ -197,7 +183,6 @@ curl http://your-server-ip:9091/api/v1/system/info
 # 数据目录结构
 ${DATA_PATH}/
 ├── milvus/          # Milvus 数据文件
-├── minio/           # MinIO 对象存储数据
 └── etcd/            # etcd 元数据
 
 # 备份脚本示例
@@ -247,14 +232,6 @@ docker-compose start
    print(utility.loading_progress("collection_name"))
    ```
 
-4. **MinIO 存储问题**
-   ```bash
-   # 检查 MinIO 服务状态
-   curl http://localhost:9000/minio/health/live
-   
-   # 查看存储空间
-   docker exec ${CONTAINER_NAME}-minio df -h
-   ```
 
 ### 日志查看
 
@@ -262,8 +239,6 @@ docker-compose start
 # 查看 Milvus 日志
 docker logs ${CONTAINER_NAME} --tail 100 -f
 
-# 查看 MinIO 日志
-docker logs ${CONTAINER_NAME}-minio --tail 100 -f
 
 # 查看 etcd 日志
 docker logs ${CONTAINER_NAME}-etcd --tail 100 -f

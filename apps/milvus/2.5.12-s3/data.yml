@@ -16,35 +16,37 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
+        - default: 9001
+          edit: true
+          envKey: MINIO_CONSOLE_PORT
+          labelEn: MinIO Console Port
+          labelZh: MinIO 控制台端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 9000
+          edit: true
+          envKey: MINIO_API_PORT
+          labelEn: MinIO API Port
+          labelZh: MinIO API 端口
+          required: true
+          rule: paramPort
+          type: number
         - default: minioadmin
           edit: true
           envKey: MINIO_ACCESS_KEY
-          labelEn: S3 Access Key
-          labelZh: S3 Access Key
+          labelEn: MinIO Access Key
+          labelZh: MinIO 访问密钥
           required: true
           type: text
         - default: minioadmin
           edit: true
           envKey: MINIO_SECRET_KEY
-          labelEn: S3 Secret Key
-          labelZh: S3 Secret Key
+          labelEn: MinIO Secret Key
+          labelZh: MinIO 密钥
           required: true
           type: password
-        - default: ""
-          edit: true
-          envKey: MINIO_ADDRESS
-          labelEn: External S3 Address
-          labelZh: 外部 S3 服务地址
-          required: true
-          type: text
-        - default: cn-east-1
-          edit: true
-          envKey: MINIO_REGION
-          labelEn: S3 Region
-          labelZh: S3 地域
-          required: true
-          type: text
-        - default: ./data
+        - default: ./data/volumes
           edit: true
           envKey: DATA_PATH
           labelEn: Data folder path
