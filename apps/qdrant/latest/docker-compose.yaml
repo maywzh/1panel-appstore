@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  app:
+    image: qdrant/qdrant:latest
+    container_name: ${CONTAINER_NAME}
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ${STORAGE_PATH}:/qdrant/storage
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:6333
+      - ${GRPC_PORT}:6334
+    restart: unless-stopped
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+networks:
+  1panel-network:
+    external: true

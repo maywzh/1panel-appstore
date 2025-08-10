@@ -1,0 +1,13 @@
+additionalProperties:
+  key: qdrant
+  name: Qdrant
+  tags:
+    - Database
+  shortDescZh: 高性能向量数据库和向量相似度搜索引擎
+  shortDescEn: High-performance vector database and similarity search engine
+  type: database
+  crossVersionUpdate: false
+  limit: 0
+  website: https://qdrant.tech
+  github: https://github.com/qdrant/qdrant
+  document: https://qdrant.tech/documentation
