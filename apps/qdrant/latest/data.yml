@@ -1,25 +1,25 @@
 additionalProperties:
-  formFields:
-    - default: 6333
-      edit: true
-      envKey: PANEL_APP_PORT_HTTP
-      labelEn: HTTP Port
-      labelZh: HTTP 端口
-      required: true
-      rule: paramPort
-      type: number
-    - default: 6334
-      edit: true
-      envKey: GRPC_PORT
-      labelEn: gRPC Port
-      labelZh: gRPC 端口
-      required: true
-      rule: paramPort
-      type: number
-    - default: "./storage"
-      edit: true
-      envKey: STORAGE_PATH
-      labelEn: Storage Path
-      labelZh: 存储目录
-      required: true
-      type: text
+    formFields:
+        - default: 6333
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: HTTP Port
+          labelZh: HTTP 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 6334
+          edit: true
+          envKey: GRPC_PORT
+          labelEn: gRPC Port
+          labelZh: gRPC 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: "/mnt/NAS3/data/storage"
+          edit: true
+          envKey: STORAGE_PATH
+          labelEn: Storage Path
+          labelZh: 存储目录
+          required: true
+          type: text

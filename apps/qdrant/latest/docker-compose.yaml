@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    image: qdrant/qdrant:latest
+    image: qdrant/qdrant
     container_name: ${CONTAINER_NAME}
     environment:
       - TZ=Asia/Shanghai
