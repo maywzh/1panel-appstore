@@ -16,7 +16,7 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
-        - default: "/mnt/NAS3/data/storage"
+        - default: "/opt/1panel/data"
           edit: true
           envKey: STORAGE_PATH
           labelEn: Storage Path
