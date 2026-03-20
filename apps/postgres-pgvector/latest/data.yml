@@ -1,0 +1,75 @@
+additionalProperties:
+    formFields:
+        - default: postgres-pgvector
+          edit: false
+          envKey: PANEL_APP_CONTAINER_NAME
+          labelEn: Container Name
+          labelZh: 容器名称
+          required: true
+          type: text
+        - default: 5432
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: postgres
+          edit: true
+          envKey: POSTGRES_DB
+          labelEn: Database Name
+          labelZh: 数据库名
+          required: true
+          type: text
+        - default: postgres
+          edit: true
+          envKey: POSTGRES_USER
+          labelEn: User
+          labelZh: 用户名
+          required: true
+          type: text
+        - default: postgres123
+          edit: true
+          envKey: POSTGRES_PASSWORD
+          labelEn: Password
+          labelZh: 密码
+          required: true
+          rule: paramComplexity
+          type: text
+        - default: /opt/1panel/data/postgres-pgvector
+          edit: true
+          envKey: DATA_PATH
+          labelEn: Data Path
+          labelZh: 数据目录
+          required: true
+          type: text
+        - default: Asia/Shanghai
+          edit: true
+          envKey: TZ
+          labelEn: Timezone
+          labelZh: 时区
+          required: true
+          type: text
+version: "3.8"
+services:
+  app:
+    image: docker.1ms.run/ankane/pgvector:latest
+    container_name: ${PANEL_APP_CONTAINER_NAME}
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - TZ=${TZ}
+    volumes:
+      - ${DATA_PATH}:/var/lib/postgresql/data
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}
+    restart: unless-stopped
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+networks:
+  1panel-network:
+    external: true
