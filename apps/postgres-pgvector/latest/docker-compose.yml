@@ -1,0 +1,21 @@
+services:
+  postgres:
+    container_name: ${CONTAINER_NAME}
+    image: docker.1ms.run/ankane/pgvector:latest
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5432"
+    volumes:
+      - "${DATA_PATH}:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - TZ=${TZ}
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true
