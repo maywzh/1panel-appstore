@@ -8,6 +8,7 @@ additionalProperties:
     key: postgres-pgvector
     name: PostgreSQL-PGVector
     tags:
+        - AI
         - Database
         - Vector Database
     shortDescZh: PostgreSQL 向量数据库，支持向量相似度搜索
