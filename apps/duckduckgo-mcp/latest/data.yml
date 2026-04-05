@@ -15,10 +15,13 @@ additionalProperties:
           labelZh: 安全搜索
           required: true
           type: select
-          values:
-            - "STRICT"
-            - "MODERATE"
-            - "OFF"
+          options:
+            - label: STRICT
+              value: "STRICT"
+            - label: MODERATE
+              value: "MODERATE"
+            - label: OFF
+              value: "OFF"
         - default: ""
           edit: true
           envKey: DDG_REGION
