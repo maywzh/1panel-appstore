@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  duckduckgo-mcp:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    image: docker.maywzh.com/duckduckgo-mcp:latest
+    environment:
+      - MCP_TRANSPORT=streamable-http
+      - HOST=0.0.0.0
+      - PORT=8080
+      - DDG_SAFE_SEARCH=${DDG_SAFE_SEARCH}
+      - DDG_REGION=${DDG_REGION}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,29 @@
+additionalProperties:
+    formFields:
+        - default: "8080"
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: "MODERATE"
+          edit: true
+          envKey: DDG_SAFE_SEARCH
+          labelEn: SafeSearch
+          labelZh: 安全搜索
+          required: true
+          type: select
+          values:
+            - "STRICT"
+            - "MODERATE"
+            - "OFF"
+        - default: ""
+          edit: true
+          envKey: DDG_REGION
+          labelEn: Region
+          labelZh: 搜索区域
+          required: false
+          type: text
+          placeholder: "如 cn-zh, us-en 等"
