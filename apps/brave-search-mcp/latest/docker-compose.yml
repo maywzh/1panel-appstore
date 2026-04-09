@@ -1,8 +1,7 @@
-version: '3.8'
 services:
   brave-search-mcp:
     container_name: ${CONTAINER_NAME}
-    restart: always
+    restart: unless-stopped
     networks:
       - 1panel-network
     ports:
