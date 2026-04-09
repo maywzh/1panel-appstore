@@ -1,0 +1,20 @@
+name: Brave Search MCP Server
+tags:
+    - 工具
+title: Brave Search MCP Server
+type: 工具
+description: Brave Search MCP Server 是一个基于 Model Context Protocol 的网页搜索服务，使用 Brave Search 引擎提供高质量搜索结果
+additionalProperties:
+    key: brave-search-mcp
+    name: Brave Search MCP Server
+    tags:
+        - Tool
+    shortDescZh: 基于 MCP 协议的 Brave 搜索服务
+    shortDescEn: Web search service based on MCP protocol using Brave Search
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://github.com/maywzh/brave-search-mcp
+    github: https://github.com/maywzh/brave-search-mcp
+    document: https://github.com/maywzh/brave-search-mcp

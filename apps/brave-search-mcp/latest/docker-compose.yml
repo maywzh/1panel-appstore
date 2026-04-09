@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  brave-search-mcp:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    image: docker.io/mcp/brave-search:latest
+    environment:
+      - MCP_TRANSPORT=streamable-http
+      - HOST=0.0.0.0
+      - PORT=8080
+      - BRAVE_API_KEY=${BRAVE_API_KEY}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

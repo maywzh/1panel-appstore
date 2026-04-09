@@ -1,0 +1,18 @@
+additionalProperties:
+    formFields:
+        - default: "8080"
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: ""
+          edit: true
+          envKey: BRAVE_API_KEY
+          labelEn: Brave API Key
+          labelZh: Brave API 密钥
+          required: true
+          type: text
+          placeholder: "请输入您的 Brave Search API 密钥"
