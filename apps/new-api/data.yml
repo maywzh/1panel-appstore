@@ -4,25 +4,24 @@ tags:
 title: 新一代大模型网关与 AI 资产管理系统
 description: 新一代大模型网关与 AI 资产管理系统
 additionalProperties:
-  # 注意：不能用 `new-api`，会与 1Panel 官方商店的同名 app key 冲突导致本地同步跳过
-  key: localnew-api
-  name: New API
-  tags:
-    - AI
-  shortDescZh: 新一代大模型网关与 AI 资产管理系统
-  shortDescEn: The next-generation LLM gateway and AI asset management system
-  description:
-    en: The next-generation LLM gateway and AI asset management system
-    zh: 新一代大模型网关与 AI 资产管理系统
-  type: website
-  # 允许跨大版本原地升级，保留 /data 卷
-  crossVersionUpdate: true
-  limit: 0
-  recommend: 360
-  batchInstallSupport: true
-  website: https://www.newapi.ai/
-  github: https://github.com/QuantumNous/new-api
-  document: https://www.newapi.ai/guide/
-  architectures:
-    - amd64
-    - arm64
+    key: new-api
+    name: New API
+    tags:
+        - AI
+    shortDescZh: 新一代大模型网关与 AI 资产管理系统
+    shortDescEn: The next-generation LLM gateway and AI asset management system
+    description:
+        en: The next-generation LLM gateway and AI asset management system
+        zh: 新一代大模型网关与 AI 资产管理系统
+    type: website
+    # 允许跨大版本原地升级，保留 /data 卷（让已装的 v0.13.2 能升到 v1.0.0-rc.41）
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 360
+    batchInstallSupport: true
+    website: https://www.newapi.ai/
+    github: https://github.com/QuantumNous/new-api
+    document: https://www.newapi.ai/guide/
+    architectures:
+        - amd64
+        - arm64
