@@ -1,0 +1,31 @@
+additionalProperties:
+    formFields:
+        - default: 3000
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: 端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: Asia/Shanghai
+          edit: true
+          envKey: TZ
+          labelEn: Time Zone
+          labelZh: 时区
+          required: true
+          type: text
+        - default: ./data
+          edit: true
+          envKey: DATA_PATH
+          labelEn: Data folder path
+          labelZh: 数据文件夹路径
+          required: true
+          type: text
+        - default: e7568cbbad9cf0ab2810100fe40ede2f
+          edit: true
+          envKey: SESSION_SECRET
+          labelEn: Session Secret (multi-node must match)
+          labelZh: 会话密钥（多节点部署需保持一致）
+          required: false
+          type: text
